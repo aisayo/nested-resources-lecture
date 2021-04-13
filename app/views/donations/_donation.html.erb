@@ -1,5 +1,7 @@
-Amount: <%= d.amount %>
-Date: <%= d.date %>
-<% if d.organization %> 
-    Organization: <%= d.organization.name %>
-<% end %>
+
+    <p>Amount: <%= d.amount %>
+        Date: <%= d.date.strftime("%m-%e-%y %H:%M") %>
+        <% if d.organization %> 
+            Organization: <%= d.organization.name %>
+        <% end %>
+    </p>

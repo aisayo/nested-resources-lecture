@@ -1,5 +1,17 @@
-<h1>Donations#index</h1>
+<br>
+<br>
+<% if @organization %>
+    <%= @organization.name %>'s donations %>
+<% else %> 
+    <h1>All Donations</h1>
+<% end %> 
 
 <%= render partial: "donation", collection: @donations, as: :d %>
+<br>
 
-<%= link_to "New Donation", new_donation_path %>
+
+<% if @organization %>
+    <%= link_to "New Donation", new_organization_donation_path %>
+<% else %>
+    <%= link_to "New Donation", new_donation_path %>
+<% end %>

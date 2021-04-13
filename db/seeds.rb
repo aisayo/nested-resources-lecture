@@ -7,17 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create([
-    {username: "h_annah", first_name: "hannah", last_name: "r", password: "test"},
-    {username: "A_manda", first_name: "Amanda", last_name: "b", password: "test"},
-    {username: "e_lombardo", first_name: "eric", last_name: "l", password: "test"},
-    ])
-
-# # faker gem
-
-# # 10.times do 
-# #     User.create(username: Faker::Name)
-# # end 
 
 Organization.create([{name: "Feeding_America "}, {name: "American Cancer Society"}, {name: "The Salvation Army"}])
 

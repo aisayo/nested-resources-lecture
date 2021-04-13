@@ -2,7 +2,7 @@ class Donation < ApplicationRecord
   belongs_to :donor, optional: true
   belongs_to :organization, optional: true
 
-  # validates :amount, presence: :true
+  validates :amount, presence: :true
 
 
   # what goes in here? 
