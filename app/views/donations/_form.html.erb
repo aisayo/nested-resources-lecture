@@ -7,7 +7,7 @@
     <%= f.datetime_field :date %>
     <% if @organization %> 
         <%= f.hidden_field :organization_id, value: @organization.id %>
-    <% else %>
+    <% else %> 
         <h4>Create an Organization:</h4>
             <%= f.fields_for :organization do |o| %>
                 <%= o.label :name %>

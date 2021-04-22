@@ -2,8 +2,9 @@ class OrganizationsController < ApplicationController
     before_action :set_organization, except: [:index, :new, :create]
 
     def index 
-        @organizations = Organization.all
-      end
+        @organizations = Organization.baller_donations
+        @donations = Donation.latest_donations
+    end
     
       def new 
        @organization = Organization.new
@@ -19,6 +20,8 @@ class OrganizationsController < ApplicationController
       end 
     
       def show 
+        # if i wanted to show all organizations donations as well
+        @organization = Organization.find_by(id: params[:id])
       end
 
       def edit

@@ -5,12 +5,14 @@ class Donation < ApplicationRecord
   validates :amount, presence: :true
 
 
-  # what goes in here? 
-    # query methods / scope methods
-    # verifications/validations
-    # helper methods
-    # domain logic 
-    # associations 
+# scope methods 
+# class methods that query the table associated with model
+# return 
+
+# return the last 3 donations that were made
+scope :latest_donations, -> {order(created_at: :desc).limit(3)}
+
+
 
 
   

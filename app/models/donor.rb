@@ -1,5 +1,6 @@
 class Donor < ApplicationRecord
-  has_secure_password
+  has_secure_password # validation, .authentication, 
+  # .password, .password=
   has_many :donations # array 
   has_many :organizations, through: :donations
 

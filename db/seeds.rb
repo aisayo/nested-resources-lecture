@@ -8,6 +8,6 @@
 
 
 
-Organization.create([{name: "Feeding_America "}, {name: "American Cancer Society"}, {name: "The Salvation Army"}])
+Organization.create([{name: "Feeding_America "}, {name: "American Cancer Society"}, {name: "The Salvation Army"}, {name: "ASPCA"}, {name: "Hope for Warriors"}])
 
 

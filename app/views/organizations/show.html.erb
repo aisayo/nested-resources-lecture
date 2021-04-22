@@ -1,5 +1,11 @@
-<h1>Organizations#show</h1>
+<br>
+<br>
+<% if @organization %>
+    <%= render partial: "organization", locals: {organization: @organization} %>
+    <%= link_to 'See this organizations donations', organization_donations_path(@organization) %>
+<% else %>
+    <h2>404</h2><h3>Not Found</h3>
+<% end %>
 
-<%= render partial: "organization", locals: {organization: @organization} %>
 
 

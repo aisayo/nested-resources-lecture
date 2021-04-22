@@ -1,4 +1,18 @@
 <h1>organizations#index</h1>
 
-<%= render partial: "organization", collection: @organizations %>
+<!-- <%= render partial: "organization", collection: @organizations %> -->
 
+
+<% @organizations.each do |org| %>
+    <%= org.name %>
+    <% org.donations.each do |donation| %>
+        <li><%= donation.amount %> - <%= donation.date %></li>
+    <% end %>
+<% end %>
+
+
+<h1>Latest Donations</h1>
+
+<% @donations.each do |donation| %>
+    <li><%= donation.organization.name %> - <%= donation.amount %> - <%= donation.date %></li>
+<% end %>

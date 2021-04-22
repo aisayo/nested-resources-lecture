@@ -2,8 +2,7 @@ class DonationsController < ApplicationController
   before_action :set_donation, except: [:index, :new, :create]
   
   def index
-     if params[:organization_id]
-      @organization = Organization.find_by(params[:organization_id])
+     if params[:organization_id] && @organization = Organization.find_by(id: params[:organization_id])
       @donations = @organization.donations
      else 
       @donations = Donation.all
@@ -12,7 +11,7 @@ class DonationsController < ApplicationController
 
   def new 
     if params[:organization_id]
-      @organization = Organization.find_by(params[:organization_id])
+      @organization = Organization.find_by(id: params[:organization_id])
       @donation = @organization.donations.build
     else 
       @donation = Donation.new
@@ -22,14 +21,14 @@ class DonationsController < ApplicationController
 
   def create 
     if params[:organization_id]
-      @organization = Organization.find_by(params[:organization_id])
+      @organization = Organization.find_by(id: params[:organization_id])
       @donation = @organization.donations.build(donation_params)
     else 
       @donation = Donation.new(donation_params)
     end 
 
     if @donation.save 
-      redirect_to donation_path(@donation)
+      redirect_to organization_donations_path(@donation.organization)
     else 
       render :new
     end 
